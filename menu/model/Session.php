@@ -104,7 +104,7 @@ class Session
         $this->sid = $sid;
         $this->http->set('sid', $sid);
         //loome cookie
-        setcookie(SITENAME, $sid, 0); //0 tähendab, et see cookie kestab senikaua, kuni brouser kinni pannakse
+//        setcookie(SITENAME, $sid, 0); //0 tähendab, et see cookie kestab senikaua, kuni brouser kinni pannakse
     }//createSession
     //sessiooni kustutamine
     function delSession()

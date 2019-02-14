@@ -13,7 +13,7 @@ class Linkobject extends Http
     //'sid'=>'sid'   - sid jaoks indeksi loomine
     var $aie = array('lang_id', 'sid'=>'sid', 'nocache');
 
-    function LinkObject()
+    function __construct()
     {
         //pärime kõik Http klassi asjad
         parent::__construct();
