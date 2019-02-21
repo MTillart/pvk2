@@ -14,17 +14,21 @@ $contentTmp = new Template('content');
 $courseCardTmp = new Template('course_card');
 
 $courseCardHeaderTmp = new Template('course_card_header');
+$courseCardDataTmp= new Template('course_card_data');
 
 
 $courseNames = array(
-    'praed',
-    'supid',
-    'magustoidud',
-    'joogid'
+    'praed' =>'fa-utensils',
+    'supid'=>'fa-utensil-spoon',
+    'magustoidud'=>'fa-cookie-bite',
+    'joogid'=>'fa-glass-whiskey',
 );
-foreach ($courseNames as $courseName){
+foreach ($courseNames as $courseName=>$courseIcon){
     $courseCardHeaderTmp->set('course_name', $courseName );
+    $courseCardHeaderTmp->set('icon', $courseIcon );
     $courseCardTmp->set('course_card_header', $courseCardHeaderTmp->parse());
+    $courseCardDataTmp->set('course_name', $courseName);
+    $courseCardTmp->set('course_card_data', $courseCardDataTmp->parse());
     $contentTmp->add('course_cards',$courseCardTmp->parse());
 }
 
